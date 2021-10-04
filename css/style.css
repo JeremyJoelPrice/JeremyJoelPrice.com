@@ -1,0 +1,72 @@
+/* Other Stylesheets */
+@import "responsive-columns.css";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Colour Palette */
+:root {
+	--off-black: #0D0507;
+	--slate: #1D3557;
+	--night-blue: #457B9D;
+	--nile-blue: #A8DADC;
+	--honeydew: #F1FAEE;
+	--soft-red: #a52a2a;
+}
+
+/* Global Styles */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+#landingPage p {
+	margin: 10px;
+}
+
+.headerText {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	color: var(--off-black);
+}
+
+.bodyText {
+	font-family: 'PT Serif', serif;
+	color: var(--off-black);
+}
+
+.roundButton {
+	border-top-right-radius: 50px;
+  	border-bottom-right-radius: 50px;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	padding: 10px;
+}
+
+/* Global Structure */
+body {
+	background-color: var(--soft-red);
+}
+
+#corpus {
+	background-color: var(--honeydew);
+	overflow: hidden;
+	width: 90%;
+	margin: auto;
+}
+
+/* Landing Page Styles */
+
+#landingPage img {
+	width: 100%;
+	padding: 30%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#landingPage button {
+	background-color: var(--soft-red);
+	color: var(--honeydew);
+}
