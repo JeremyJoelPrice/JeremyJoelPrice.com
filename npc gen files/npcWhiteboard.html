@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset=“utf-8”>
+<meta http-equic="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<div id=corpus>
+		<section id=characterParametersSection class="row row-sm">
+			<br>
+			<br>
+
+			<h1 class=headerText>Character Parameters</h1>
+			<br>
+			
+			<p class=bodyText>
+				Descent:
+				<select name="descent" id="descentField">
+					<option value="Norræn">Norræn</option>
+					<option value="Asculum">Asculum</option>
+					<option value="Woodlands">Woodlans</option>
+				</select> <br>
+				Sex
+				<select name="sex" id="sexField">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+			</p>
+			<br>
+			<button id=generateButton onclick="characterGenerator.generateName()" class=bodyText>Generate Name</button>
+			<br>
+			<button id=generateButton onclick="diceRollerTester.testDrive()" class=bodyText>Run Test</button>
+			<br>
+			<br>
+			<p id=characterNameField class=bodyText>Character Name</p>
+		</section>
+		<section id=characterTypeSection class="row row-sm">
+			<br>
+			<br>
+
+			<h1 class=headerText>Character Type</h1>
+			<br>
+		</section>
+		<section id=characterisationSection class="row row-sm">
+			<br>
+			<br>
+			<h1 class=headerText>Characterisation</h1>
+			<br>
+			<p class=bodyText>
+				<button class=bodyText onclick=characterGenerator.generateAppearance()>Generate Appearance</button>
+				<br>
+				<br>
+				<h3 class=headerText>Appearances & Mannerisms</h3>
+				<br>
+				<p id=characterAppearaceField></p>
+				<br>
+				<button class=bodyText onclick=characterGenerator.generateAmbition()>Generate Ambition</button>
+				<br>
+				<br>
+				<h3 class=headerText>Burning Ambition</h3>
+				<br>
+				<p id=characterAmbitionField></p>
+				<button class=bodyText onclick=characterGenerator.generateFriendships()>Generate Friendships</button>
+				<br>
+				<br>
+				<h3 class=headerText>Close Friendships</h3>
+				<br>
+				<p id=characterFriendshipsField></p>
+			</p>
+		</section>
+	</div>
+	<script src="js/charGenScript.js"></script>
+</body>
+
+</html>

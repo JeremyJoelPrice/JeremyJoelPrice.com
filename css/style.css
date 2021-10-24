@@ -60,7 +60,9 @@ body {
 	background-color: var(--honeydew);
 	overflow: hidden;
 	width: 90%;
+	height: 100vh;
 	margin: auto;
+	overflow: scroll;
 }
 
 /* Landing Page Styles */
