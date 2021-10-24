@@ -28,6 +28,8 @@ const ajax = {
 	var appearanceCsvTables = new Array(6);
 	var ambitionCsvTables = new Array(6);
 	var friendshipsCsvTables = new Array(6);
+	var tragediesCsvTables = new Array(6);
+	var romancesCsvTables = new Array(6);
 }
 
 // Populate variables with csv data
@@ -59,12 +61,12 @@ document.addEventListener("DOMContentLoaded",
 		}
 		{// Ambition
 			let ambitionAddresses = [
-				"csv/Characterisation/Ambition/Things to Help or Hinder the Ambition.csv",
+				"csv/Characterisation/Ambition/When Was the Ambition Sparked.csv",
+				"csv/Characterisation/Ambition/Who Knows or Has Been Involved in It.csv",
 				"csv/Characterisation/Ambition/What Tools Are Used to Advance It.csv",
 				"csv/Characterisation/Ambition/What’s the Basic Ambition’s Form.csv",
 				"csv/Characterisation/Ambition/What’s the Biggest Immediate Obstacle.csv",
-				"csv/Characterisation/Ambition/When Was the Ambition Sparked.csv",
-				"csv/Characterisation/Ambition/Who Knows or Has Been Involved in It.csv"
+				"csv/Characterisation/Ambition/Things to Help or Hinder the Ambition.csv"
 			];
 			for (let index in ambitionAddresses)
 			{
@@ -73,16 +75,44 @@ document.addEventListener("DOMContentLoaded",
 		}
 		{// Friendships
 			let friendshipsAddresses = [
-				"csv/Characterisation/Close Friendships/How Did They Meet.csv",
 				"csv/Characterisation/Close Friendships/How Old is the Relationship.csv",
-				"csv/Characterisation/Close Friendships/Things Between Friends.csv",
+				"csv/Characterisation/Close Friendships/How Did They Meet.csv",
 				"csv/Characterisation/Close Friendships/What Have They Done Together.csv",
+				"csv/Characterisation/Close Friendships/What Tie Harmonizes Their Differences.csv",
 				"csv/Characterisation/Close Friendships/What Threatens to Divide Them.csv",
-				"csv/Characterisation/Close Friendships/What Tie Harmonizes Their Differences.csv"
+				"csv/Characterisation/Close Friendships/Things Between Friends.csv"
 			];
 			for (let index in friendshipsAddresses)
 			{
 				ajax.get(friendshipsAddresses[index], function(responseText){friendshipsCsvTables[index] = responseText});
+			}
+		}
+		{// Tragedies
+			let tragediesAddresses = [
+				"csv/Characterisation/Personal Tragedies/When Did It Happen.csv",
+				"csv/Characterisation/Personal Tragedies/What Was Their Responsibility For It.csv",
+				"csv/Characterisation/Personal Tragedies/How Did They Try to Cope With It.csv",
+				"csv/Characterisation/Personal Tragedies/What Was Its Basic Form.csv",
+				"csv/Characterisation/Personal Tragedies/What Ugly Consequences Followed.csv",
+				"csv/Characterisation/Personal Tragedies/What Scars Do They Have From It.csv"
+			];
+			for (let index in tragediesAddresses)
+			{
+				ajax.get(tragediesAddresses[index], function(responseText){tragediesCsvTables[index] = responseText});
+			}
+		}
+		{// Romances
+			let romancesAddresses = [
+				"csv/Characterisation/Troubled Romances/Past Length of the Relationship.csv",
+				"csv/Characterisation/Troubled Romances/How Did They Meet.csv",
+				"csv/Characterisation/Troubled Romances/What Sparked the Romance.csv",
+				"csv/Characterisation/Troubled Romances/What Problem Does One or Both Have.csv",
+				"csv/Characterisation/Troubled Romances/What’s the Current Issue They Face.csv",
+				"csv/Characterisation/Troubled Romances/Quirks or Traits of the Relationship.csv"
+			];
+			for (let index in romancesAddresses)
+			{
+				ajax.get(romancesAddresses[index], function(responseText){romancesCsvTables[index] = responseText});
 			}
 		}
 	}
@@ -228,13 +258,19 @@ var characterGenerator = {
 		return nameTables;
 	},
 	generateAppearance() {
-		this.generateSection(ambitionCsvTables, "#characterAppearaceField");
+		this.generateSection(appearanceCsvTables, "#characterAppearaceField");
 	},
 	generateAmbition() {
-		this.generateSection(appearanceCsvTables, "#characterAmbitionField");
+		this.generateSection(ambitionCsvTables, "#characterAmbitionField");
 	},
 	generateFriendships() {
 		this.generateSection(friendshipsCsvTables, "#characterFriendshipsField");
+	},
+	generateTragedies() {
+		this.generateSection(tragediesCsvTables, "#characterTragediesField");
+	},
+	generateRomances() {
+		this.generateSection(romancesCsvTables, "#characterRomancesField");
 	},
 	generateSection(tablesVariable, querySelector) {
 		// Roll for results
