@@ -15,27 +15,24 @@
 
 			<h1 class=headerText>Character Parameters</h1>
 			<br>
-			
-			<p class=bodyText>
+			<div class="bodyText col-lg-6">
 				Descent:
 				<select name="descent" id="descentField">
 					<option value="Norræn">Norræn</option>
 					<option value="Asculum">Asculum</option>
 					<option value="Woodlands">Woodlans</option>
-				</select> <br>
+				</select><br>
 				Sex
 				<select name="sex" id="sexField">
 					<option value="Male">Male</option>
 					<option value="Female">Female</option>
-				</select>
-			</p>
-			<br>
-			<button id=generateButton onclick="characterGenerator.generateName()" class=bodyText>Generate Name</button>
-			<br>
-			<button id=generateButton onclick="diceRollerTester.testDrive()" class=bodyText>Run Test</button>
-			<br>
-			<br>
-			<p id=characterNameField class=bodyText>Character Name</p>
+				</select><br><br>
+				<p id=characterNameField class=bodyText>Character Name</p>
+				<button id=generateButton onclick="characterGenerator.generateName()" class=bodyText>Generate Name</button>
+			</div>
+			<div class="bodyText col-lg-6">
+				<button id=generateButton onclick="diceRollerTester.testDrive()" class=bodyText>Run Test</button>
+			</div>
 		</section>
 		<section id=characterTypeSection class="row row-sm">
 			<br>
@@ -49,39 +46,50 @@
 			<br>
 			<h1 class=headerText>Characterisation</h1>
 			<br>
-			<p class=bodyText>
-				<button class=bodyText onclick=characterGenerator.generateAppearance()>Generate Appearance</button>
-				<br>
-				<br>
-				<h3 class=headerText>Appearances & Mannerisms</h3>
-				<br>
-				<p id=characterAppearaceField></p>
-				<br>
-				<button class=bodyText onclick=characterGenerator.generateAmbition()>Generate Ambition</button>
-				<br>
-				<br>
-				<h3 class=headerText>Burning Ambition</h3>
-				<br>
-				<p id=characterAmbitionField></p>
-				<button class=bodyText onclick=characterGenerator.generateFriendships()>Generate Friendships</button>
-				<br>
-				<br>
-				<h3 class=headerText>Close Friendships</h3>
-				<br>
-				<p id=characterFriendshipsField></p>
-				<button class=bodyText onclick=characterGenerator.generateTragedies()>Generate Tragedies</button>
-				<br>
-				<br>
-				<h3 class=headerText>Personal Tragedies</h3>
-				<br>
-				<p id=characterTragediesField></p>
-				<button class=bodyText onclick=characterGenerator.generateRomances()>Generate Romances</button>
-				<br>
-				<br>
-				<h3 class=headerText>Troubled Romances</h3>
-				<br>
-				<p id=characterRomancesField></p>
-			</p>
+			<div class="bodyText row">
+				<div class="col-lg-6">
+					<button class=bodyText onclick=characterGenerator.generateAppearance()>Generate Appearance</button>
+					<br>
+					<br>
+					<h3 class=headerText>Appearances & Mannerisms</h3>
+					<br>
+					<p id=characterAppearaceField></p>
+				</div>
+				<div class="col-lg-6">
+					<button class=bodyText onclick=characterGenerator.generateAmbition()>Generate Ambition</button>
+					<br>
+					<br>
+					<h3 class=headerText>Burning Ambition</h3>
+					<br>
+					<p id=characterAmbitionField></p>
+				</div>
+			</div>
+			<div class="bodyText row">
+				<div class="col-lg-4">
+					<button class=bodyText onclick=characterGenerator.generateFriendships()>Generate Friendships</button>
+					<br>
+					<br>
+					<h3 class=headerText>Close Friendships</h3>
+					<br>
+					<p id=characterFriendshipsField></p>
+				</div>
+				<div class="col-lg-4">
+					<button class=bodyText onclick=characterGenerator.generateTragedies()>Generate Tragedies</button>
+					<br>
+					<br>
+					<h3 class=headerText>Personal Tragedies</h3>
+					<br>
+					<p id=characterTragediesField></p>
+				</div>
+				<div class="col-lg-4">
+					<button class=bodyText onclick=characterGenerator.generateRomances()>Generate Romances</button>
+					<br>
+					<br>
+					<h3 class=headerText>Troubled Romances</h3>
+					<br>
+					<p id=characterRomancesField></p>
+				</div>
+			</div>
 		</section>
 	</div>
 	<script src="js/charGenScript.js"></script>

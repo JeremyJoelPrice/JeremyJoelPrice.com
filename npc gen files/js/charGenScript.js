@@ -151,7 +151,6 @@ const diceRoller = {
 		return result;
 	},
 	readDice(dice) {
-		console.log("reading dice...");
 		dice = dice.split("d");
 		if (dice[0] === "") dice[0] = 1;
 
