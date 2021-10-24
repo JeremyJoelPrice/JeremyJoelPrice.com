@@ -151,43 +151,14 @@ const diceRoller = {
 		return result;
 	},
 	readDice(dice) {
-		switch(dice) {
-			case "d4":
-				return {
-					numOfDice: 1,
-					numOfSides: 4
-				};
-			case "d6":
-				return {
-					numOfDice: 1,
-					numOfSides: 6
-				};
-			case "d8":
-				return {
-					numOfDice: 1,
-					numOfSides: 8
-				};
-			case "d10":
-				return {
-					numOfDice: 1,
-					numOfSides: 10
-				};
-			case "d12":
-				return {
-					numOfDice: 1,
-					numOfSides: 12
-				};
-			case "d20":
-				return {
-					numOfDice: 1,
-					numOfSides: 20
-				};
-			default:
-				return {
-					numOfDice: 1,
-					numOfSides: dice.substring(1)
-				};
-		}
+		console.log("reading dice...");
+		dice = dice.split("d");
+		if (dice[0] === "") dice[0] = 1;
+
+		return {
+			numOfDice: dice[0],
+			numOfSides: dice[1]
+		};
 	},
 	lookupValueOnTable(diceRoll, table) { // Simple version, which finds the number but can't handle ranges like 5-8
 		let value = "";
@@ -287,7 +258,7 @@ var characterGenerator = {
 		let html = "";
 		for (let index in values) {
 			let tableTitle = this.getTableTitle(tables[index]);
-			let tableResult = diceRoller.rollOnTable(tables[index]);
+			let tableResult = values[index];
 			html += `
 			<p><i>${tableTitle}</i></p>
 			<p>${tableResult}</p>
